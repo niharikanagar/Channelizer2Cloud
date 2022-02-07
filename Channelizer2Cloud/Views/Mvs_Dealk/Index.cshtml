@@ -1,0 +1,136 @@
+﻿@model IEnumerable<Channelizer2Cloud.Models.Mvs_Deal>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AppLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.VendorId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProgramId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DealName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DealDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExpectedRevenue)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DealStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubmittedOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mvs_VarId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerContactId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SalesRepId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubmitedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsDeleted)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastModifiedOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ModifiedBy)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.VendorId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProgramId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DealName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DealDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExpectedRevenue)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DealStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubmittedOn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mvs_VarId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerContactId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SalesRepId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubmitedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsActive)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedOn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsDeleted)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastModifiedOn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ModifiedBy)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Mvs_Deal_Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Mvs_Deal_Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Mvs_Deal_Id })
+        </td>
+    </tr>
+}
+
+</table>

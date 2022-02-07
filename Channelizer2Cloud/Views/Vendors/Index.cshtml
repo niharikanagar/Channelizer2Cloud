@@ -1,0 +1,107 @@
+﻿@model IEnumerable<Channelizer2Cloud.Models.Vendor>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Vendor List</h2>
+
+<p>
+
+    @Html.ActionLink("Back", "Home", "Main") | @Html.ActionLink("Create New", "CreateVendor", "Main")
+</p>
+<table class="table">
+    <tr>
+        <th>
+          Vendor Name
+        </th>
+        <th>
+           Vendor Logo
+        </th>
+        <th>
+           Primary Color
+        </th>
+        <th>
+          Secondary Color
+        </th>
+        <th>
+           Font
+        </th>
+        <th>
+          Twitter Link
+        </th>
+        <th>
+           Linkedin Link
+        </th>
+        <th>
+            Active
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.CreatedOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsDeleted)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastModifiedOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ModifiedBy)
+        </th>*@
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.VendorName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VendorLogo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VendorPrimaryColor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VendorSecondaryColor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VendorFont)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TwitterLink)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LinkedinLink)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsActive)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.CreatedOn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsDeleted)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastModifiedOn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ModifiedBy)
+        </td>*@
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Vendor_Id }) 
+            @*@Html.ActionLink("Details", "Details", new { id=item.Vendor_Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Vendor_Id })*@
+        </td>
+    </tr>
+}
+
+</table>

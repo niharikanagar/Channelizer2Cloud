@@ -1,0 +1,108 @@
+﻿@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_AppLayout.cshtml";
+}
+
+<div class="row">
+    <!-- side panel -->
+    <div class="col-md-3">
+
+        @if (ViewBag.UserType == "System Admin"){
+        <div class="form-group">
+            <a class="btn form-control sidebar-tile" href="/FieldTypes/Index">Field Type/Data Type</a>
+            <a class="btn form-control sidebar-tile" href="/ReferenceDataListItems/Index">ReferenceDataListItem</a>
+            <a class="btn form-control sidebar-tile" href="/UserLoginDeviceInfoes/Index">UserLoginDeviceInfo</a>
+            <a class="btn form-control sidebar-tile" href="/Vendor_Program/Index">Program Management</a>
+            <a class="btn form-control sidebar-tile" href="/Vendor_RegistrationFormField/Index">Vendor RegistrationFormField</a>
+            <a class="btn form-control sidebar-tile" href="/Vendors/Index">Vendor Management</a>
+            <a class="btn form-control sidebar-tile" href="/AuditLogs/Index">Audit Management</a>
+            <a class="btn form-control sidebar-tile" href="/EventLogs/Index">Event Management</a>
+            <a class="btn form-control sidebar-tile" href="/User_LogTime/Index">Session Management</a>
+            <a class="btn form-control sidebar-tile" href="/UserInformations/Index">User Management</a>
+            <a class="btn form-control sidebar-tile" href="/countries/Index">Country Management</a>
+            <a class="btn form-control sidebar-tile" href="/states/Index">State Management</a>
+            <a class="btn form-control sidebar-tile" href="/Customers/Index">Customer Management</a>
+            <a class="btn form-control sidebar-tile" href="/CustomerContacts/Index">CustomerContact Management</a>
+            <a class="btn form-control sidebar-tile" href="/Mvs_Deal/Index">Deal Management</a>
+            <a class="btn form-control sidebar-tile" href="/MvsSalesRepresentatives/Index">SalesRep Management</a>
+            <a class="btn form-control sidebar-tile" href="/VendorUsers/Index">VendorUser Management</a>
+            <a class="btn form-control sidebar-tile" href="/VarUsers/Index">VarUser Management</a>
+            <a class="btn form-control sidebar-tile" href="/AllControllers/Index">Controller Management</a>
+            <a class="btn form-control sidebar-tile" href="/AllActions/Index">Action Management</a>
+            <a class="btn form-control sidebar-tile" href="/Roles/Index">Roles Management</a>
+            <a class="btn form-control sidebar-tile" href="/RolesUserPermissions/Index">RolePermission Management</a>
+        </div>
+        }
+    </div>
+    <!-- main -->
+    <div class="col-md-9">
+        <div class="row">
+            @{
+                foreach (var item in ViewBag.ActionPermissionList)
+                {
+                    if (item == "CreateVendor")
+                    {<div class="col-md-4">
+                        <a href="/Vendors/Index">
+                            <div class="tile">Create/Edit Vendor</div>
+                        </a>
+                    </div>
+                    }
+                    else if (item == "CreateProgram")
+                    {
+                    <div class="col-md-4">
+                        <a href="/Vendor_Program/Index">
+                            <div class="tile">Create/Edit Program</div>
+                        </a>
+                    </div>
+                    }
+                    else if (item == "CreateNewReg")
+                    {
+                    <div class="col-md-4">
+                        <a href="/Main/CreateNewReg">
+                            <div class="tile">Create New Reg</div>
+                        </a>
+                    </div>
+                    }
+                    else if (item == "ViewRegistrations")
+                    {
+                    <div class="col-md-4">
+                        <a href="/Main/ViewRegistrations">
+                            <div class="tile">View Registrations</div>
+                        </a>
+                    </div>
+                    }
+                    else if (item == "DeletedRegistrations")
+                    {
+
+                    <div class="col-md-4">
+                        <a href="/Main/DeletedRegistrations">
+                            <div class="tile">Deleted Registrations</div>
+                        </a>
+                    </div>
+                    }
+                    else if (item == "RoleManage")
+                    {
+                    <div class="col-md-4">
+                        <a href="/Main/RoleManage?roleId=0">
+                            <div class="tile">Role Manage</div>
+                        </a>
+                    </div>
+                    }
+                    else if (item == "UserManagement")
+                    {
+                    <div class="col-md-4">
+                        <a href="/Main/UserManagement">
+                            <div class="tile">User Management</div>
+                        </a>
+                    </div>
+                        }
+                    }
+                }
+                </div>
+     
+    </div>
+</div>
+
+
+
+

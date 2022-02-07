@@ -1,0 +1,91 @@
+﻿@model PagedList.IPagedList<Channelizer2Cloud.Models.UserInformation>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AppLayout.cshtml";
+}
+
+
+<br />
+<br />
+<p>
+    @Html.ActionLink("Create New User", "EditUserManagement", "Main")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            User TypeId
+        </th>
+        <th>
+           First Name
+        </th>
+        <th>
+           Last Name
+        </th>
+        <th>
+            User Name
+        </th>
+        <th>
+           Email
+        </th>
+        <th>
+            Phone
+        </th>
+        <th>
+           Password
+        </th>
+
+        <th>
+           IsActive
+        </th>
+        <th> Assigned Role</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+
+                @Html.DropDownList("UserTypeId", new SelectList((IEnumerable<SelectListItem>)ViewBag.GetUserTypeList, "Value", "Text", item.UserTypeId), new { id = "ddlRole", @class = "form-control", @disabled = "disabled" })
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.IsActive)
+            </td>
+            <td>
+                @Html.DropDownList("role_id", new SelectList((IEnumerable<SelectListItem>)ViewBag.GetRoleList, "Value", "Text", item.role_id), "-- Select One --", new { id = "ddlRole", @class = "form-control", @disabled = "disabled" })
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "UpdateUserManagement", "Main", new { @Id = item.UserInformation_Id }, null)
+            </td>
+        </tr>
+    }
+</table>
+<div class="row">
+    <div class="col-md-10">
+        @Html.PagedListPager(Model, page => Url.Action("UserManagement", new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+    </div>
+    <div class="col-md-2">
+        <p style="text-align: center; padding: 2em;">Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount</p>
+    </div>
+</div>
+

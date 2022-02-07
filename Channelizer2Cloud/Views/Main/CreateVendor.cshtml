@@ -1,0 +1,78 @@
+﻿@model Channelizer2Cloud.Models.Vendor
+@{
+    ViewBag.Title = "Create Vendor";
+    Layout = "~/Views/Shared/_AppLayout.cshtml";
+}
+
+<h3>Create Vendor</h3>
+@using (Html.BeginForm("CreateVendor", "Main", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+<div class="form-horizontal">
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.VendorName, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.VendorName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.VendorName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Upload Vendor Logo</label>
+
+        <div class="col-md-10">
+            <input type="file" name="LogoImage" required class="form-control" />
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.VendorPrimaryColor, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.VendorPrimaryColor, new { htmlAttributes = new { @class = "form-control", @Type = "color" } })
+            @Html.ValidationMessageFor(model => model.VendorPrimaryColor, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.VendorSecondaryColor, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.VendorSecondaryColor, new { htmlAttributes = new { @class = "form-control", @Type = "color" } })
+            @Html.ValidationMessageFor(model => model.VendorSecondaryColor, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.VendorFont, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.VendorFont, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.VendorFont, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.Label("Twitter Link", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.TwitterLink, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TwitterLink, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.Label("Linkedin Link", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.LinkedinLink, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.LinkedinLink, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create Vendor" class="btn btn-primary" />
+        </div>
+    </div>
+</div>
+}
+
+

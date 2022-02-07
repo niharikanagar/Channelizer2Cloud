@@ -1,0 +1,124 @@
+﻿@model IEnumerable<Channelizer2Cloud.Models.Vendor_RegistrationFormField>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.VendorId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VendorProgramId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FieldName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FieldLabel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FieldTypeId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FieldDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Placeholder)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReferenceDataListId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sequence)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsRequired)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsDeleted)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastModifiedOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ModifiedBy)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.VendorId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VendorProgramId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FieldName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FieldLabel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FieldTypeId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FieldDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Placeholder)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReferenceDataListId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sequence)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsRequired)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsActive)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedOn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsDeleted)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastModifiedOn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ModifiedBy)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Vendor_RegistrationFormField_Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Vendor_RegistrationFormField_Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Vendor_RegistrationFormField_Id })
+        </td>
+    </tr>
+}
+
+</table>

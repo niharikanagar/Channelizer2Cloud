@@ -1,0 +1,84 @@
+﻿@model IEnumerable<Channelizer2Cloud.Models.Vendor_Program>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Vendor Program List</h2>
+
+<p>
+    @Html.ActionLink("Back", "Home", "Main") |  @Html.ActionLink("Create New", "CreateProgram","Main")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Vendor Name
+        </th>
+        <th>
+           Program Name
+        </th>
+        <th>
+           Description
+        </th>
+        <th>
+           Active
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.CreatedOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsDeleted)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastModifiedOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ModifiedBy)
+        </th>*@
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.vendor.VendorName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProgramName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsActive)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.CreatedOn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsDeleted)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastModifiedOn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ModifiedBy)
+        </td>*@
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.Vendor_Program_Id }) @*| 
+
+            @Html.ActionLink("EditForm", "EditForm","Main", new { programId = item.Vendor_Program_Id, vendorId=item.VendorId },null)
+            @Html.ActionLink("Details", "Details", new { id=item.Vendor_Program_Id }) |
+        @Html.ActionLink("Delete", "Delete", new { id=item.Vendor_Program_Id })*@
+        </td>
+    </tr>
+}
+
+</table>

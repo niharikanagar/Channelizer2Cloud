@@ -1,0 +1,107 @@
+﻿@model Channelizer2Cloud.Models.UserLoginDeviceInfo
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>UserLoginDeviceInfo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ip)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ip)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.city)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.city)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.region)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.region)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.country)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.country)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.loc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.loc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.org)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.org)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.postal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.postal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.timezone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.timezone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.user_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.user_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.onetimepassword)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.onetimepassword)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.login_time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.login_time)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.UserLoginDeviceInfo_Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

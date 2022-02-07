@@ -1,0 +1,136 @@
+﻿@model IEnumerable<Channelizer2Cloud.Models.Roles>
+
+@{
+                /**/
+
+                ViewBag.Title = "RoleManage";
+                Layout = "~/Views/Shared/_AppLayout.cshtml";
+}
+<br />
+<br />
+<div class="row">
+    <div class="col-md-1">
+        </div>
+        <div class="col-md-3">
+            @using (Html.BeginForm())
+            {
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.Label("Role Name", htmlAttributes: new { @class = "control-label" })
+                    @Html.Editor("RoleName", new { htmlAttributes = new { @class = "form-control" } })
+                    <p class="text-danger">@ViewBag.ValidationError</p>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Create New" class="btn btn-primary" />
+                </div>
+            }
+            <hr />
+            <h4>Role List</h4>
+
+            <table class="table" id="RoleGrid">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.RoleName)
+                    </th>
+                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            <a href='~/Main/RoleManage?roleId=@item.Role_Id' class="role-permission" data-id="@item.Role_Id" data-status="@item.RoleName">
+                                @Html.DisplayFor(modelItem => item.RoleName)
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+        <div class="col-md-7">
+            <div id="RolePermissionView"></div>
+        </div>
+        <div class="col-md-1">
+        </div>
+    </div>
+
+    @section Scripts{
+        <script type="text/javascript">
+            $(document).ready(function () {
+                var params = new window.URLSearchParams(window.location.search);
+                console.log(params.get('roleId'));
+
+                var roleId = params.get('roleId');
+                console.log(roleId);
+                loadPermissionView(roleId, "Default Role");
+
+                $("#RoleGrid .role-permission").click(function () {
+                    var role_Id = $(this).data('id');
+                    var role_name = $(this).data('status');
+
+                    console.log('click');
+                    loadPermissionView(role_Id, role_name);
+                });
+
+                function loadPermissionView(role_Id, role_name) {
+                    console.log(role_Id);
+                    console.log(role_name);
+
+                    $.ajax
+                        ({
+                            type: 'GET',
+                            url: '/Main/RenderRolePermission?roleId=' + role_Id,
+                            contentType: "application/html; charset=utf-8",
+                            datatype: 'html',
+                            success: function (data) {
+                                $("#RolePermissionView").html(data)
+                            },
+                            error: function () {
+                                $("#RolePermissionView").html("Post Not Found")
+                            }
+                        })
+                };
+
+                //function getPermissionModels() {
+                //    permissionModels = [];
+
+                //    const permissionModel = document.querySelectorAll('#permissionModel');
+                //    const controllerName = document.querySelectorAll('#controllerName');
+                //    const isIndex = document.querySelectorAll('#isIndex');
+                //    const isCreate = document.querySelectorAll('#isCreate');
+                //    const isDelete = document.querySelectorAll('#isDelete');
+                //    const isEdit = document.querySelectorAll('#isEdit');
+
+                //    for (var i = 0; i < permissionModel.length; i++) {
+                //        if (permissionModel[i].value != '') {
+                //            var _permissionId = item_PermissionId[i].value;
+                //            console.log('PermissionId : ' + _permissionId);
+                //            //console.log(isCreate[i].value);
+                //            //console.log(isDelete[i].value);
+                //            //console.log(isEdit[i].value);
+                //            var chkPassport = $('#isIndex_' + _permissionId).is(":checked");
+                //            if (chkPassport.checked) {
+                //                console.log("CheckBox checked.");
+                //            } else {
+                //                console.log("CheckBox not checked.");
+                //            }
+
+                //            permissionModels.push({
+                //                PermissionId: item_PermissionId[i].value,
+                //                ControllerName: controllerName[i].innerHTML,
+                //                IsIndex: true,
+                //                IsCreate: true,
+                //                IsDelete: true,
+                //                IsEdit: false
+                //            });
+                //        }
+                //    }
+                //    return permissionModels;
+                //}
+
+
+            });
+           
+
+
+        </script>
+    }

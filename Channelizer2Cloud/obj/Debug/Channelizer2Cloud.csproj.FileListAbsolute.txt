@@ -1,0 +1,272 @@
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\Channelizer2Cloud.dll.config
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\Channelizer2Cloud.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\Channelizer2Cloud.pdb
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\csc.exe
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\csc.exe.config
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\csc.rsp
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\csi.exe
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\csi.exe.config
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\csi.rsp
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\Microsoft.Managed.Core.targets
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\System.AppContext.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\System.Collections.Immutable.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\System.Console.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\System.Globalization.Calendars.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\System.IO.Compression.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\System.IO.FileSystem.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\System.Net.Http.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\System.Net.Sockets.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\System.Reflection.Metadata.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\System.ValueTuple.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\System.Xml.XmlDocument.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\System.Xml.XPath.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\vbc.exe
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\vbc.exe.config
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\vbc.rsp
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\VBCSCompiler.exe
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\VBCSCompiler.exe.config
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\Antlr3.Runtime.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\BouncyCastle.Crypto.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\EntityFramework.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\EntityFramework.SqlServer.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\MailKit.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\Microsoft.Web.Infrastructure.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\MimeKit.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\Newtonsoft.Json.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\PagedList.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\PagedList.Mvc.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\RestSharp.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\System.Buffers.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\System.Net.Http.Formatting.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\System.Web.Helpers.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\System.Web.Http.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\System.Web.Http.WebHost.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\System.Web.Mvc.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\System.Web.Optimization.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\System.Web.Razor.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\System.Web.WebPages.Deployment.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\System.Web.WebPages.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\System.Web.WebPages.Razor.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\WebGrease.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\BouncyCastle.Crypto.xml
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\EntityFramework.xml
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\EntityFramework.SqlServer.xml
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\MailKit.pdb
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\MailKit.xml
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\MimeKit.pdb
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\MimeKit.xml
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\PagedList.xml
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\PagedList.Mvc.xml
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\RestSharp.xml
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\System.Buffers.xml
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\System.Web.Helpers.xml
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\System.Web.Mvc.xml
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\System.Web.Optimization.xml
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\System.Web.Razor.xml
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\System.Web.WebPages.xml
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\System.Web.WebPages.Deployment.xml
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\System.Web.WebPages.Razor.xml
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\Newtonsoft.Json.xml
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\Antlr3.Runtime.pdb
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\System.Net.Http.Formatting.xml
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\System.Web.Http.xml
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\System.Web.Http.WebHost.xml
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.channelizerdb2version1.resources
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.channelizerdb2version2.resources
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.channelizerdb2version3.resources
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.channelizerdb2version4.resources
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.channelizerdb2version5.resources
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.channelizerdb2version6.resources
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.channelizerdbversion7.resources
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.channelizerdbversion71.resources
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.channelizerdbversion8.resources
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.channelizerdbversion9.resources
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.channelizerdbversion10.resources
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.channelizerdbversion11.resources
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.csproj.GenerateResource.cache
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.csproj.CoreCompileInputs.cache
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.csproj.CopyComplete
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.dll
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.pdb
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.csproj.AssemblyReference.cache
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.channelizerdbversion16.resources
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.channelizerdbversion17.resources
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.channelizerdbversion18.resources
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.channelizerdbversion19.resources
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.channelizerdbversion20.resources
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.channelizerdbversion21.resources
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.channelizerdbversion22.resources
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.channelizerdbversion23.resources
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.channelizerdbversion24.resources
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.channelizerdbversion25.resources
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.channelizerdbversion26.resources
+D:\Development\Channelizer2.0\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.channelizerdbversion27.resources
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\Channelizer2Cloud.dll.config
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\Channelizer2Cloud.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\Channelizer2Cloud.pdb
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\csc.exe
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\csc.exe.config
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\csc.rsp
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\csi.exe
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\csi.exe.config
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\csi.rsp
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\System.AppContext.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\System.Console.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\System.IO.Compression.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\System.Net.Http.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\System.Net.Sockets.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\System.ValueTuple.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\vbc.exe
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\vbc.exe.config
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\vbc.rsp
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\VBCSCompiler.exe
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\Antlr3.Runtime.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\BouncyCastle.Crypto.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\EntityFramework.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\EntityFramework.SqlServer.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\MailKit.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\MimeKit.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\Newtonsoft.Json.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\PagedList.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\PagedList.Mvc.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\RestSharp.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\System.Buffers.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\System.Net.Http.Formatting.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\System.Web.Helpers.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\System.Web.Http.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\System.Web.Http.WebHost.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\System.Web.Mvc.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\System.Web.Optimization.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\System.Web.Razor.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\System.Web.WebPages.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\System.Web.WebPages.Razor.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\WebGrease.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\BouncyCastle.Crypto.xml
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\EntityFramework.xml
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\EntityFramework.SqlServer.xml
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\MailKit.pdb
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\MailKit.xml
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\MimeKit.pdb
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\MimeKit.xml
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\PagedList.xml
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\PagedList.Mvc.xml
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\RestSharp.xml
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\System.Buffers.xml
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\System.Web.Helpers.xml
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\System.Web.Mvc.xml
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\System.Web.Optimization.xml
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\System.Web.Razor.xml
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\System.Web.WebPages.xml
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\System.Web.WebPages.Razor.xml
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\Newtonsoft.Json.xml
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\Antlr3.Runtime.pdb
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\System.Net.Http.Formatting.xml
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\System.Web.Http.xml
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\System.Web.Http.WebHost.xml
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.channelizerdb2version1.resources
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.channelizerdb2version2.resources
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.channelizerdb2version3.resources
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.channelizerdb2version4.resources
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.channelizerdb2version5.resources
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.channelizerdb2version6.resources
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.channelizerdbversion7.resources
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.channelizerdbversion71.resources
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.channelizerdbversion8.resources
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.channelizerdbversion9.resources
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.channelizerdbversion10.resources
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.channelizerdbversion11.resources
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.channelizerdbversion16.resources
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.channelizerdbversion17.resources
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.channelizerdbversion18.resources
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.channelizerdbversion19.resources
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.channelizerdbversion20.resources
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.channelizerdbversion21.resources
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.channelizerdbversion22.resources
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.channelizerdbversion23.resources
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.channelizerdbversion24.resources
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.channelizerdbversion25.resources
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.channelizerdbversion26.resources
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.channelizerdbversion27.resources
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.channelizerdbversion28.resources
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.channelizerdbversion29.resources
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.channelizerdbversion30.resources
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.channelizerdbversion31.resources
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.channelizerdbversion32.resources
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.csproj.GenerateResource.cache
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.csproj.CopyComplete
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.dll
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.pdb
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.channelizerdbversion33.resources
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.channelizerdbversion34.resources
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.channelizerdbversion341.resources
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.channelizerdbversion35.resources
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.channelizerdbversion36.resources
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.usertype.resources
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\chnnelizer 2.0\Channelizer2Cloud\Channelizer2Cloud\Channelizer2Cloud\obj\Debug\Channelizer2Cloud.Migrations.userinfo.resources

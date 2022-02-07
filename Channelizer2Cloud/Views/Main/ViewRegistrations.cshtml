@@ -1,0 +1,108 @@
+﻿@model PagedList.IPagedList<Channelizer2Cloud.Models.Mvs_Deal>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "ViewRegistrations";
+    Layout = "~/Views/Shared/_AppLayout.cshtml";
+}
+
+<br />
+<h2>View Registrations</h2>
+
+
+<div class="row">
+    <div class="col-md-8">
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+
+            @using (Html.BeginForm(null, null, FormMethod.Post, new { @class = "form-inline" }))
+            {
+                @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @class = "form-control" })
+                <input type="submit" value="Search" class="btn btn-primary glyphicon-search" />
+                @Html.ActionLink("Create New", "CreateNewReg")
+            }
+        </div>
+    </div>
+</div>
+<br />
+
+<table class="table">
+    <tr>
+        <th>
+            Vendor Name
+        </th>
+        <th>
+            Program Name
+        </th>
+        <th>
+            @Html.ActionLink("Deal Name", "ViewRegistrations", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>
+            @Html.ActionLink("Deal Description", "ViewRegistrations", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>
+            @Html.ActionLink("Created On", "ViewRegistrations", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>
+            @Html.ActionLink("Deal Status", "ViewRegistrations", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>
+            SaleRep Name
+        </th>
+        <th>
+            Submitted On
+        </th>
+        <th>
+            Created By
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.vendor.VendorName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vendor_Program.ProgramName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DealName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DealDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedOn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DealStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mvsSalesRepresentative.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubmittedOn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedBy)
+        </td>
+        <td>
+            @Html.ActionLink("Edit Deal", "EditRegDeal", new { @dealId = item.Mvs_Deal_Id, @programId = item.Vendor_Program_Id })|
+            @Html.ActionLink("View Deal", "ViewDealInformation", new { @dealId = item.Mvs_Deal_Id, @programId = item.Vendor_Program_Id })
+
+        </td>
+    </tr>
+    }
+
+</table>
+
+<div class="row">
+    <div class="col-md-10">
+        @Html.PagedListPager(Model, page => Url.Action("ViewRegistrations", new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+    </div>
+    <div class="col-md-2">
+        <p style="text-align: center; padding: 2em;">Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount</p>
+    </div>
+</div>

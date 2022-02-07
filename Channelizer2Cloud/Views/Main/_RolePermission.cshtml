@@ -1,0 +1,134 @@
+﻿@model IEnumerable<Channelizer2Cloud.Models.RolesAppPermission>
+
+
+<div class="row">
+    <div class="col-md-3">@Html.Label("Page Name", htmlAttributes: new { @class = "control-label" }) <span style="color:red;">*</span></div>
+    <div class="col-md-3">@Html.Label("Permissions", htmlAttributes: new { @class = "control-label" }) <span style="color:red;">*</span></div>
+    <div class="col-md-6"></div>
+
+</div>
+<div class="row">
+    <div class="col-md-3">
+        @Html.DropDownList("ControllerName", (IEnumerable<SelectListItem>)ViewBag.allController, "-- Select--", new { id = "ddlController", @class = "form-control", required = "required" })
+    </div>
+    <div class="col-md-3">
+        @Html.DropDownList("Actions", new SelectList(""), "-- Select--", new { id = "ddlActions", @class = "form-control", required = "required" })
+
+    </div>
+    <div class="col-md-6">
+        <input id="savePermission" type="submit" value="Save" class="btn btn-primary" />
+    </div>
+</div>
+<br />
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Controller)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Action)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Controller)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Action)
+            </td>
+            <td>
+               
+            <button class="btn-danger" onclick = "deleteRoleAppPermission(@item.RolesAppPermission_Id);">Delete</button>
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+
+
+
+<script>
+    var params = new window.URLSearchParams(window.location.search);
+    $("#ddlController").change(function () {
+        $.get("/Main/GetActionList", { controllerId: $("#ddlController").val() }, function (data) {
+            $.each(data, function (index, row) {
+                $("#ddlActions").append("<option value='" + row.Value + "'>" + row.Text + "</option>")
+            });
+        });
+    });
+
+
+    $(document).on('click', '#savePermission', function (e) {
+        var appPermissionModel = new Object();
+        appPermissionModel.Role_Id = params.get('roleId');
+        appPermissionModel.Controller = $("#ddlController option:selected").text();
+        appPermissionModel.Action = $("#ddlActions option:selected").text();
+
+        console.log(JSON.stringify(appPermissionModel));
+        $.ajax({
+            type: 'POST',
+            url: '/Main/SaveRolePermission',
+            data: JSON.stringify(appPermissionModel),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function () {
+                $.ajax
+                    ({
+                        type: 'GET',
+                        url: '/Main/RenderRolePermission?roleId=' + params.get('roleId'),
+                        contentType: "application/html; charset=utf-8",
+                        datatype: 'html',
+                        success: function (dataview) {
+                            $("#RolePermissionView").html(dataview)
+                        },
+                        error: function () {
+                            $("#RolePermissionView").html("Post Not Found")
+                        }
+                    })
+            },
+            error: function () {
+                alert("Error on Saving Roles Permission");
+            }
+        });
+        
+    });
+
+    function deleteRoleAppPermission(rolePermissionId) {
+        $.ajax
+            ({
+                type: 'GET',
+                url: '/Main/DeleteRoleAppPermissions?rolesAppPermissionId=' + rolePermissionId,
+                contentType: "application/JSON; charset=utf-8",
+                datatype: 'json',
+                success: function (data) {
+                    $.ajax
+                        ({
+                            type: 'GET',
+                            url: '/Main/RenderRolePermission?roleId=' + params.get('roleId'),
+                            contentType: "application/html; charset=utf-8",
+                            datatype: 'html',
+                            success: function (dataview) {
+                                $("#RolePermissionView").html(dataview)
+                            },
+                            error: function () {
+                                $("#RolePermissionView").html("Post Not Found")
+                            }
+                        })
+
+                },
+                error: function () {
+                    $("#RolePermissionView").html("Post Not Found")
+                }
+
+
+
+            });
+    }
+</script>
+

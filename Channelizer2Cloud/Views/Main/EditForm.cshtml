@@ -1,0 +1,922 @@
+﻿@model IEnumerable<Channelizer2Cloud.Models.Vendor_RegistrationFormField>
+@{
+    ViewBag.Title = "Edit Vendor Form";
+    Layout = "~/Views/Shared/_AppLayout.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-md-2" id="divDraggable">
+        <h2>Controls</h2>
+        <div class="row">
+
+            <button class="form-control" id="btn_InputLineText" onclick="btn_InputLineText()">
+                <span class="fa fa-text-width"></span> Single Line Text
+            </button>
+            <button class="form-control" id="btn_InputDropdown" onclick="btn_InputDropdown()">
+                <span class="fa fa-caret-square-down"></span> Dropdown
+            </button>
+            <button class="form-control" id="btn_InputMultipleChoice" onclick="btn_InputMultipleChoice()">
+                <span class="fa fa-check-square"></span> Multiple Choice
+            </button>
+            <button class="form-control" id="btn_InputCalender" onclick="btn_InputCalender()">
+                <span class="fa fa-calendar-plus"></span> Calender
+            </button>
+
+            <button class="form-control" id="btn_InputParagraph" onclick="btn_InputParagraph()">
+                <span class="fa fa-paragraph"></span> Paragraph Text
+            </button>
+            <button class="form-control" id="btn_InputSingleChoice" onclick="btn_InputSingleChoice()">
+                <span class="fa fa-dot-circle"></span> Single Choice
+            </button>
+            <button class="form-control" id="btn_InputNumbers" onclick="btn_InputNumbers()">
+                <span class="fa fa-hashtag"></span> Numbers
+            </button>
+            <button class="form-control" id="btn_InputEmail" onclick="btn_InputEmail()">
+                <span class="fa fa-envelope"></span> Email
+            </button>
+            <button class="form-control" id="btn_InputCurrency" onclick="btn_InputCurrency()">
+                <span class="fa fa-money-bill-wave"></span> Currency
+            </button>
+            <button class="form-control" id="btn_InputTelephone" onclick="btn_InputTelephone()">
+                <span class="fa fa-mobile"></span> Telephone
+            </button>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="row">
+            <div class="col-md-8">
+                <h2>Vendor Form</h2>
+            </div>
+            <div class="col-md-4">
+                <input type='button' class='btn btn-primary' value='Save VendorForm' id="saveVendorForm" onclick="saveAllInputfields();" />
+            </div>
+        </div>
+        <div id="outerdivDroppable" class="row">
+            <div class="col-md-12">
+                <div id="divDroppable">
+                    @foreach (var item in Model)
+                    {
+                        //email
+                        if (item.FieldTypeId == 7)
+                        {
+                            <div class="form-group">
+                                <label class="control-label">@Html.DisplayFor(modelItem => item.FieldLabel)</label>
+                                @if (item.IsRequired ?? false)
+                                {
+                                    <span class='CDRFchecked'> *</span>
+                                }
+                                <input class="form-control" type="email" name=@Html.DisplayFor(modelItem => item.FieldName) />
+                                <span>@Html.DisplayFor(modelItem => item.FieldDescription)</span>
+                            </div>
+
+                        }
+                        //date
+                        if (item.FieldTypeId == 5)
+                        {
+                            <div class='droppablefield' id="div_@Html.DisplayFor(modelItem => item.Sequence)">
+                                <div class='row'>
+                                    <label class='control-label'>@Html.DisplayFor(modelItem => item.FieldLabel)</label>
+                                    @if (item.IsRequired ?? false)
+                                    {
+                                        <span class='CDRFchecked'> *</span>
+                                    }
+                                    <div style='float:right;'>
+                                        <button onclick='dealformfieldedit(this)' class="div_@Html.DisplayFor(modelItem => item.Sequence)"><i class='fa fa-file'></i></button>
+                                        <button onclick='dealformfielddelete(this)' class="div_@Html.DisplayFor(modelItem => item.Sequence)"><i class='fa fa-trash'></i></button>
+                                    </div>
+                                </div>
+                                <div class='row'><input class='form-control' type='date' name=@Html.DisplayFor(modelItem => item.FieldName) /></div>
+                                <span>@Html.DisplayFor(modelItem => item.FieldDescription)</span>
+                            </div>
+                            @*<div class="form-group">
+                                    <label class="control-label">@Html.DisplayFor(modelItem => item.FieldLabel)</label>
+                                    @if (item.IsRequired)
+                                    {
+                                        <span class='CDRFchecked'> *</span>
+                                    }
+                                    <input class="form-control" type="date" name=@Html.DisplayFor(modelItem => item.FieldName) />
+                                    <span>@Html.DisplayFor(modelItem => item.FieldDescription)</span>
+                                </div>*@
+                        }
+                        if (item.FieldTypeId == 11)
+                        {
+                            <div class="form-group">
+                                <label class="control-label">@Html.DisplayFor(modelItem => item.FieldLabel)</label>
+                                @if (item.IsRequired ?? false)
+                                {
+                                    <span class='CDRFchecked'> *</span>
+                                }
+                                <input class="form-control" type="number" name=@Html.DisplayFor(modelItem => item.FieldName) />
+                                <span>@Html.DisplayFor(modelItem => item.FieldDescription)</span>
+                            </div>
+                        }
+                        if (item.FieldTypeId == 18)
+                        {
+                            <div class="form-group">
+                                <label class="control-label">@Html.DisplayFor(modelItem => item.FieldLabel)</label>
+                                @if (item.IsRequired ?? false)
+                                {
+                                    <span class='CDRFchecked'> *</span>
+                                }
+                                <input class="form-control" type="tel" name=@Html.DisplayFor(modelItem => item.FieldName) />
+                                <span>@Html.DisplayFor(modelItem => item.FieldDescription)</span>
+                            </div>
+                        }
+                        //text
+                        if (item.FieldTypeId == 19)
+                        {
+                            @*<div class='droppablefield' id="div_@Html.DisplayFor(modelItem => item.Sequence)">
+                                <div class='row'>
+                                    <label class='control-label'>@Html.DisplayFor(modelItem => item.FieldLabel)</label>
+                                    @if (item.IsRequired ?? false)
+                                    {
+                                        <span class='CDRFchecked'> *</span>
+                                    }
+                                    <div style='float:right;'>
+                                        <button onclick='dealformfieldedit(this)' class="div_@Html.DisplayFor(modelItem => item.Sequence)"><i class='fa fa-file'></i></button>
+                                        <button onclick='dealformfielddelete(this)' class="div_@Html.DisplayFor(modelItem => item.Sequence)"><i class='fa fa-trash'></i></button>
+                                    </div>
+                                </div>
+                                <div class='row'><input class='form-control' type='text' name="@Html.DisplayFor(modelItem => item.FieldName)" /></div>
+                                <span>@Html.DisplayFor(modelItem => item.FieldDescription)</span>
+                            </div>*@
+
+
+                            @*<div class="form-group">
+                                    <label class="control-label">@Html.DisplayFor(modelItem => item.FieldLabel)</label>
+                                    @if (item.IsRequired)
+                                    {
+                                        <span class='CDRFchecked'> *</span>
+                                    }
+
+                                    <input class="form-control" type="text" name=@Html.DisplayFor(modelItem => item.FieldName) />
+                                    <span>@Html.DisplayFor(modelItem => item.FieldDescription)</span>
+                                </div>*@
+                        }
+
+                        if (item.FieldTypeId == 24)
+                        {
+                            string fieldid = (item.FieldName).Remove(0, 8);
+
+                            <div class="form-group">
+                                <label class="control-label">@Html.DisplayFor(modelItem => item.FieldLabel)</label>
+                                @if (item.IsRequired ?? false)
+                                {
+                                    <span class='CDRFchecked'> *</span>
+                                }
+                                <br />
+                                @Html.DropDownList(item.FieldName, (IEnumerable<SelectListItem>)ViewData[fieldid], new { @class = "form-control" })
+
+                                <span>@Html.DisplayFor(modelItem => item.FieldDescription)</span>
+                            </div>
+                        }
+                        if (item.FieldTypeId == 2)
+                        {
+                            string fieldid = (item.FieldName).Remove(0, 8);
+                            <div class="form-group">
+                                <label class="control-label">@Html.DisplayFor(modelItem => item.FieldLabel)</label>
+                                @if (item.IsRequired ?? false)
+                                {
+                                    <span class='CDRFchecked'> *</span>
+                                }
+                                <br />
+
+
+                                @foreach (var lists in (IEnumerable<SelectListItem>)ViewData[fieldid])
+                                {
+                                    <input type="checkbox" name=@Html.DisplayFor(modelItem => item.FieldName) value=@lists.Value />
+
+                                    <label>@lists.Text</label><br />
+
+                                }
+                                <span>@Html.DisplayFor(modelItem => item.FieldDescription)</span>
+                            </div>
+                        }
+
+                        if (item.FieldTypeId == 13)
+                        {
+                            string fieldid = (item.FieldName).Remove(0, 8);
+                            <div class="form-group">
+                                <label class="control-label">@Html.DisplayFor(modelItem => item.FieldLabel)</label>
+                                @if (item.IsRequired ?? false)
+                                {
+                                    <span class='CDRFchecked'> *</span>
+                                }
+                                <br />
+
+                                @foreach (var lists in (IEnumerable<SelectListItem>)ViewData[fieldid])
+                                {
+                                    <input type="radio" name=@Html.DisplayFor(modelItem => item.FieldName) value=@lists.Value />
+
+                                    <label>@lists.Text</label><br />
+
+                                }
+
+                                <span>@Html.DisplayFor(modelItem => item.FieldDescription)</span>
+                            </div>
+                        }
+                    }
+
+                </div>
+                <div class="looksubmitbuttonsection">
+                    <input type='button' class='btn btn-primary' value='Submit' disabled />
+                    <input type='button' class='btn btn-info' value='Save as Draft' disabled />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <h2>Field Properties</h2>
+        <div id="outerdivformDroppable">
+            <div id="divformDroppable">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script type="text/javascript">
+    //global variable counter
+  
+    //global variable counter
+    var counter = @ViewBag.Counter+1;
+    var optioncounter = @ViewBag.OptionCounter+1;
+    var vendorId = @ViewBag.vendorId;
+    var programId =@ViewBag.programId;
+    //1 single line text
+    function btn_InputLineText() {
+        var element = document.getElementById("divDroppable");
+        var elementid = "div_" + counter;
+        element.insertAdjacentHTML('beforeend',"<div class='droppablefield' id=" + elementid +
+            "><div class='row'>" +
+            "<label class='control-label'>Single Line Text</label><span class='CDRFchecked'></span>" +
+            "<div style='float:right;'><button onclick='dealformfieldedit(this)' class='" + elementid + "' ><i class='fa fa-file'></i></button>" +
+            "<button onclick='dealformfielddelete(this)' class='" + elementid + "'><i class='fa fa-trash'></i></button></div></div>" +
+            "<div class='row'><input class='form-control' type='text' /></div>" +
+            "<span>Description</span>" +
+            "</div>");
+
+        var formelement = document.getElementById("divformDroppable");
+        var formelementid = "formdiv_" + counter;
+        formelement.insertAdjacentHTML('beforeend',"<div class='droppableformfield formelementhidden' id=" + formelementid +
+            "><div class='form-group'>" +
+            "<label class='control-label'>Label Name</label>" +
+            "<input type='text' class='form-control " + formelementid + "' onkeyup='labelchange(this)' id='labelid" + counter + "' value='Single Line Text' /></div>" +
+            "<div class='form-group'>" +
+            "<label class='control-label'>Description</label>" +
+            "<input type='text' class='form-control " + formelementid + "' onkeyup='descriptionchange(this)' id='descriptionid" + counter + "' value='Description' /></div>" +
+            "<div class='form-group'><label class='control-label'>Placeholder</label><br>" +
+            "<input class='form-control " + formelementid + "' type='text' id='placceholderid" + counter + "' onkeyup='placeholderchange(this)'/></div>" +
+            "<div class='form-group'><label class='control-label'>Is Required</label><br>" +
+            "<input class='check " + formelementid + "' type='checkbox' id='checkid" + counter + "' onchange='checkrequired(this)'/></div>" +
+            "<input type='button' class='btn " + formelementid + " btn-primary' name='saveall' value='Save Changes' onClick='saveInputfields(this)' /></div>");
+        ++counter;
+    }
+
+    //2 dropdown
+    function btn_InputDropdown() {
+        var element = document.getElementById("divDroppable");
+        var elementid = "div_" + counter;
+        element.insertAdjacentHTML('beforeend',"<div class='droppablefield' id=" + elementid +
+            "><div class='row'>" +
+            "<label class='control-label'>Dropdown</label><span class='CDRFchecked'></span>" +
+            "<div style='float:right;'><button onclick='dealformfieldedit(this)' class='" + elementid + "' ><i class='fa fa-file'></i></button>" +
+            "<button onclick='dealformfielddelete(this)' class='" + elementid + "'><i class='fa fa-trash'></i></button></div></div>" +
+            "<div class='row'><select class='form-control " + elementid + "'><option class='form-control " + elementid + "opt0' value='Add Value'>Add Text</option></select></div>" +
+            "<span>Description</span>" +
+            "</div>");
+
+        var formelement = document.getElementById("divformDroppable");
+        var formelementid = "formdiv_" + counter;
+        formelement.insertAdjacentHTML('beforeend',"<div class='droppableformfield formelementhidden' id=" + formelementid +
+            "><div class='form-group'>" +
+            "<label class='control-label labelname'>Label Name</label>" +
+            "<input type='text' class='form-control " + formelementid + "' onkeyup='labelchange(this)' id='labelid" + counter + "' value='Dropdown' /></div>" +
+            "<div class='form-group'>" +
+            "<label class='control-label labelname'>Description</label>" +
+            "<input type='text' class='form-control " + formelementid + "' onkeyup='descriptionchange(this)' id='descriptionid" + counter + "' value='Description' /></div>" +
+            "<label class='control-label labelname'>Option List</label>" +
+            "<div class='row' id='optionlist" + formelementid + "'><div class='form-group col-md-12'><button class='btn optionlist" + formelementid + " btn-info' onClick='addoptionlist(this)'><span class='fa fa-plus-circle'></span></button><button class='btn btn-info' onClick='removeoptionlist(this)'><span class='fa fa-minus-circle'></span></button></div>" +
+            "<div class='form-group col-md-6'><label>Display value</label><input type=text  class='form-control " + elementid + "opt0' id='optionlisttextid" + formelementid + "' value='Add Text' onkeyup='optionlisttextchange(this)'/>" +
+            "</div><div class='form-group col-md-6'><label>Data value</label><input type=text  class='form-control " + elementid + "opt0' id='optionlistvalueid" + formelementid + "' value='Add Value' onkeyup='optionlistvaluechange(this)'/>" +
+            "</div></div>" +
+            "<div class='form-group'><label class='control-label'>Is Required</label><br>" +
+            "<input class='check " + formelementid + "' type='checkbox' id='checkid" + counter + "' onchange='checkrequired(this)'/></div>" +
+            "<input type='button' class='btn " + formelementid + " btn-primary' name='saveall' value='Save Changes' onClick='saveInputfields(this)' /></div></div>");
+        ++counter;
+    }
+
+    function optionlistvaluechange(elementid) {
+        var classname = elementid.className.split(' ')[1];
+        document.querySelector('.' + classname).value = document.getElementById(elementid.id).value;
+    }
+
+    function optionlisttextchange(elementid) {
+        var classname = elementid.className.split(' ')[1];
+        document.querySelector('.' + classname).text = document.getElementById(elementid.id).value;
+    }
+
+    function addoptionlist(elementid) {
+        ++optioncounter;
+        var classname = elementid.className.split(' ')[1];
+        var optionelement = document.getElementById(classname);
+        optionelement.insertAdjacentHTML('beforeend', "<div class='form-group col-md-6'><label class='label-control'>Display value</label><input type=text  class='form-control " + elementid.className.split(' ')[1] + "opt" + optioncounter + "' id='optionlisttextid" + elementid.className.split(' ')[1] + "opt" + optioncounter + "' value='Add Text' onkeyup='optionlisttextchange(this)'/>" +
+           "</div><div class='form-group col-md-6'><label class='label-control'>Data value</label><input type=text  class='form-control " + elementid.className.split(' ')[1] + "opt" + optioncounter + "' id='optionlistvalueid" + elementid.className.split(' ')[1] + "opt" + optioncounter + "' value='Add Value' onkeyup='optionlistvaluechange(this)'/>" +
+           "</div>");
+        var formelement = document.getElementById(classname.slice(14));
+        var selectoption = formelement.querySelector('select.'+ classname.slice(14));
+        selectoption.insertAdjacentHTML('beforeend', "<option class='form-control " + elementid.className.split(' ')[1] + "opt" + optioncounter + "' value='Add Value'>Add Value</option>");
+
+    }
+    function removeoptionlist(option) {
+        alert(option.id);
+    }
+    //3 Multiple Choice
+    function btn_InputMultipleChoice() {
+        var element = document.getElementById("divDroppable");
+        var elementid = "div_" + counter;
+        element.insertAdjacentHTML('beforeend', "<div class='droppablefield' id=" + elementid +
+            "><div class='row'>" +
+            "<label class='control-label'>Multiple Choice</label><span class='CDRFchecked'></span>" +
+            "<div style='float:right;'><button onclick='dealformfieldedit(this)' class='" + elementid + "' ><i class='fa fa-file'></i></button>" +
+            "<button onclick='dealformfielddelete(this)' class='" + elementid + "'><i class='fa fa-trash'></i></button></div></div>" +
+            "<div class='form-group' id='" + elementid + "checklist'><input type='checkbox' class='check " + elementid + "opt0value' value='"+ optioncounter +"'  /><span class='check " + elementid + "opt0text'>Add Text</span></div>" +
+            "<span>Description</span>" +
+            "</div></div>");
+
+        var formelement = document.getElementById("divformDroppable");
+        var formelementid = "formdiv_" + counter;
+        formelement.insertAdjacentHTML('beforeend',"<div class='droppableformfield formelementhidden' id=" + formelementid +
+            "><div class='form-group'>" +
+            "<label class='control-label labelname'>Label Name</label>" +
+             "<input type='text' class='form-control " + formelementid + "' onkeyup='labelchange(this)' id='labelid" + counter + "' value='Multiple Choice' /></div>" +
+            "<div class='form-group'>" +
+            "<label class='control-label labelname'>Description</label>" +
+            "<input type='text' class='form-control " + formelementid + "' onkeyup='descriptionchange(this)' id='descriptionid" + counter + "' value='Description' /></div>" +
+            "<label class='control-label labelname'>Option List</label>" +
+            "<div class='row' id='checklist" + formelementid + "'><div class='form-group col-md-12'><button class='btn checklist" + formelementid + " btn-info' onClick='addchecklist(this)'><span class='fa fa-plus-circle'></span></button><button class='btn btn-info' onClick='removeoptionlist(this)'><span class='fa fa-minus-circle'></span></button></div>" +
+            "<div class='form-group col-md-12'><label>Display value</label><input type=text  class='form-control " + elementid + "opt0' id='checklisttextid" + formelementid + "' value='Add Text' onkeyup='checklisttextchange(this)'/>" +
+            "</div><div class='form-group col-md-6 hidden'><label>Data value</label><input type=text  class='form-control " + elementid + "opt0' id='checklistvalueid" + formelementid + "' value='" + optioncounter + "' onkeyup='checklistvaluechange(this)' readonly='true'/>" +
+            "</div></div>" +
+            "<div class='form-group'><label class='control-label'>Is Required</label><br>" +
+            "<input class='check " + formelementid + "' type='checkbox' id='checkid" + counter + "' onchange='checkrequired(this)'/></div>" +
+            "<input type='button' class='btn " + formelementid + " btn-primary' name='saveall' value='Save Changes' onClick='saveInputfields(this)' /></div>");
+        ++counter;
+        ++optioncounter;
+    }
+
+
+    function checklistvaluechange(elementid) {
+        var classname = elementid.className.split(' ')[1]+"value";
+        //console.log(classname);
+        document.querySelector('.' + classname).value = document.getElementById(elementid.id).value;
+    }
+
+    function checklisttextchange(elementid) {
+        var classname = elementid.className.split(' ')[1]+"text";
+        //console.log(classname);
+        document.querySelector('.' + classname).innerHTML = document.getElementById(elementid.id).value;
+    }
+
+    function addchecklist(elementid) {
+
+        var classname = elementid.className.split(' ')[1];
+        var optionelement = document.getElementById(classname);
+        optionelement.insertAdjacentHTML('beforeend', "<div class='form-group col-md-12'><label class='label-control'>Display value</label><input type=text  class='form-control " + elementid.className.split(' ')[1] + "opt" + optioncounter + "' id='checklisttextid" + elementid.className.split(' ')[1] + "opt" + optioncounter + "' value='Add Text' onkeyup='checklisttextchange(this)'/>" +
+            "</div><div class='form-group col-md-6 hidden'><label class='label-control'>Data value</label><input type=text  class='form-control " + elementid.className.split(' ')[1] + "opt" + optioncounter + "' id='checklistvalueid" + elementid.className.split(' ')[1] + "opt" + optioncounter + "' value='" + optioncounter + "' onkeyup='checklistvaluechange(this)' readonly='true'/>" +
+           "</div>");
+        //var formelement = document.getElementById(classname.slice(13));
+        //var selectoption = formelement.querySelector('select.'+ classname.slice(13));
+        // selectoption.insertAdjacentHTML('beforeend', "<option class='form-control " + elementid.className.split(' ')[1] + "opt" + optioncounter + "' value='Add Value'>Add //Value</option>");
+        console.log(classname.slice(13));
+        var formelement = document.getElementById(classname.slice(13) + "checklist");
+        formelement.insertAdjacentHTML('beforeend', "<br/><input type='checkbox' class='check " + elementid.className.split(' ')[1] + "opt" + optioncounter + "value' value='" + optioncounter + "' readonly='true' /><span class='check " + elementid.className.split(' ')[1] + "opt" + optioncounter + "text'>Add Text</span>");
+        ++optioncounter;
+    }
+    //4 name
+    //function btn_InputName() {
+    //    var element = document.getElementById("divDroppable");
+    //    var elementid = "div_" + counter;
+    //    element.innerHTML += "<div class='droppablefield' id=" + elementid +
+    //        "><div class='row'><div class='row'>" +
+    //        "<div class='col-md-6'></div><div class='col-md-6'><div style='float:right;'><button onclick='dealformfieldedit(this)' class='" + elementid + "' ><i class='fa fa-file'></i></button>" +
+    //        "<button onclick='dealformfielddelete(this)' class='" + elementid + "'><i class='fa fa-trash'></i></button></div></div></div>" +
+    //        "<div class='row'><div class='col-md-6'><label>First Name</label><input class='form-control' type='text'/></div><div class='col-md-6'><label>Last Name</label><span class='CDRFchecked'></span><input class='form-control' type='text' /></div></div>" +
+    //        "</div></div>" +
+    //        "<span>Description</span>" +
+    //        "</div>";
+
+
+    //    var formelement = document.getElementById("divformDroppable");
+    //    var formelementid = "formdiv_" + counter;
+    //    formelement.innerHTML += "<div class='droppableformfield formelementhidden' id=" + formelementid +
+    //        "><div class='form-group'>" +
+    //        "<label class='control-label labelname'>Label Name</label>" +
+    //        "<input type='text' class='form-control'/></div>" +
+    //        "<div class='form-group'>" +
+    //        "<label class='control-label labelname'>Description</label>" +
+    //        "<input type='text' class='form-control " + formelementid + "' onkeyup='descriptionchange(this)' id='descriptionid" + counter + "' value='Description' /></div>" +
+    //        "<div class='form-group'><label class='control-label'>Is Required</label><br>" +
+    //        "<input class='check " + formelementid + "' type='checkbox' id='checkid" + counter + "' onchange='checkrequired(this)'/></div>" +
+    //        "<input type='button' class='btn btn-primary' value='Save Changes' onClick=saveInputfields() /></div>";
+    //    ++counter;
+    //}
+
+    //5 calender
+    function btn_InputCalender() {
+        var element = document.getElementById("divDroppable");
+        var elementid = "div_" + counter;
+        element.insertAdjacentHTML('beforeend',"<div class='droppablefield' id=" + elementid +
+            "><div class='row'>" +
+            "<label class='control-label'>Calender</label><span class='CDRFchecked'></span>" +
+            "<div style='float:right;'><button onclick='dealformfieldedit(this)' class='" + elementid + "' ><i class='fa fa-file'></i></button>" +
+            "<button onclick='dealformfielddelete(this)' class='" + elementid + "'><i class='fa fa-trash'></i></button></div></div>" +
+            "<div class='row'><input class='form-control' type='date'/></div>" +
+            "<span>Description</span>" +
+            "</div>");
+
+
+        var formelement = document.getElementById("divformDroppable");
+        var formelementid = "formdiv_" + counter;
+        formelement.insertAdjacentHTML('beforeend',"<div class='droppableformfield formelementhidden' id=" + formelementid +
+            "><div class='form-group'>" +
+            "<label class='control-label labelname'>Label Name</label>" +
+            "<input type='text' class='form-control " + formelementid + "' onkeyup='labelchange(this)' id='labelid" + counter + "' value='Calender' /></div>" +
+            "<div class='form-group'>" +
+            "<label class='control-label labelname'>Description</label>" +
+            "<input type='text' class='form-control " + formelementid + "' onkeyup='descriptionchange(this)' id='descriptionid" + counter + "' value='Description' /></div>" +
+            "<div class='form-group'><label class='control-label'>Is Required</label><br>" +
+            "<input class='check " + formelementid + "' type='checkbox' id='checkid" + counter + "' onchange='checkrequired(this)'/></div>" +
+            "<input type='button' class='btn " + formelementid + " btn-primary' name='saveall' value='Save Changes' onClick='saveInputfields(this)' /></div>");
+        ++counter;
+    }
+
+    //6 paragraph text
+    function btn_InputParagraph() {
+        var element = document.getElementById("divDroppable");
+        var elementid = "div_" + counter;
+        element.insertAdjacentHTML('beforeend',"<div class='droppablefield' id=" + elementid +
+            "><div class='row'>" +
+            "<label class='control-label'>Paragraph Header</label>" +
+            "<div style='float:right;'><button onclick='dealformfieldedit(this)' class='" + elementid + "' ><i class='fa fa-file'></i></button>" +
+            "<button onclick='dealformfielddelete(this)' class='" + elementid + "'><i class='fa fa-trash'></i></button></div></div>" +
+            "<div class='row'><p class='' ></p></div>" +
+            "<span>Text</span>" +
+            "</div>");
+
+
+        var formelement = document.getElementById("divformDroppable");
+        var formelementid = "formdiv_" + counter;
+        formelement.insertAdjacentHTML('beforeend',"<div class='droppableformfield formelementhidden' id=" + formelementid +
+            "><div class='form-group'>" +
+            "<label class='control-label labelname'>Label Name</label>" +
+            "<input type='text' class='form-control " + formelementid + "' onkeyup='labelchange(this)' id='labelid" + counter + "' value='Paragraph Header'/></div>" +
+            "<div class='form-group'>" +
+            "<label class='control-label labelname'>Description</label>" +
+            "<input type='text' class='form-control " + formelementid + "' onkeyup='descriptionchange(this)' id='descriptionid" + counter + "' value='Text' /></div>" +
+            "<input type='button' class='btn " + formelementid + " btn-primary' name='saveall' value='Save Changes' onClick='saveInputfields(this)' /></div>");
+        ++counter;
+    }
+
+    //7 single choice
+    function btn_InputSingleChoice() {
+        var element = document.getElementById("divDroppable");
+        var elementid = "div_" + counter;
+        element.insertAdjacentHTML('beforeend',"<div class='droppablefield' id=" + elementid +
+            "><div class='row'>" +
+            "<label class='control-label'>Single Choice</label><span class='CDRFchecked'></span>" +
+            "<div style='float:right;'><button onclick='dealformfieldedit(this)' class='" + elementid + "' ><i class='fa fa-file'></i></button>" +
+            "<button onclick='dealformfielddelete(this)' class='" + elementid + "'><i class='fa fa-trash'></i></button></div></div>" +
+            "<div class='form-group' id='" + elementid + "radiolist'><input type='radio' class='radeo " + elementid + "opt0value' value='1' name='radio"+elementid+"' /><span class='radeo " + elementid + "opt0text'>Add Text</span></div>" +
+        //    "<div class='row'><input class='radio' type='radio' /></div>" +
+            "<span>Description</span>" +
+            "</div>");
+
+
+        var formelement = document.getElementById("divformDroppable");
+        var formelementid = "formdiv_" + counter;
+        formelement.insertAdjacentHTML('beforeend',"<div class='droppableformfield formelementhidden' id=" + formelementid +
+            "><div class='form-group'>" +
+            "<label class='control-label labelname'>Label Name</label>" +
+            "<input type='text' class='form-control " + formelementid + "' onkeyup='labelchange(this)' id='labelid" + counter + "' value='Single Choice' /></div>" +
+            "<div class='form-group'>" +
+            "<label class='control-label labelname'>Description</label>" +
+            "<input type='text' class='form-control " + formelementid + "' onkeyup='descriptionchange(this)' id='descriptionid" + counter + "' value='Description' /></div>" +
+            "<label class='control-label labelname'>Option List</label>" +
+            "<div class='row' id='radiolist" + formelementid + "'><div class='form-group col-md-12'><button class='btn radiolist" + formelementid + " btn-info' onClick='addradiolist(this)'><span class='fa fa-plus-circle'></span></button><button class='btn btn-info' onClick='removeoptionlist(this)'><span class='fa fa-minus-circle'></span></button></div>" +
+            "<div class='form-group col-md-12'><label>Display value</label><input type=text  class='form-control " + elementid + "opt0' id='radiolisttextid" + formelementid + "' value='Add Text' onkeyup='radiolisttextchange(this)'/>" +
+            "</div><div class='form-group col-md-6 hidden'><label>Data value</label><input type=text  class='form-control " + elementid + "opt0' id='radiolistvalueid" + formelementid + "' value='" + optioncounter + "' onkeyup='radiolistvaluechange(this)' readonly='true' />" +
+            "</div></div>" +
+            "<div class='form-group'><label class='control-label'>Is Required</label><br>" +
+            "<input class='check " + formelementid + "' type='checkbox' id='checkid" + counter + "' onchange='checkrequired(this)'/></div>" +
+            "<input type='button' class='btn " + formelementid + " btn-primary' name='saveall' value='Save Changes' onClick='saveInputfields(this)' /></div>");
+        ++counter;
+        ++optioncounter;
+    }
+
+    function radiolistvaluechange(elementid) {
+        debugger;
+        var classname = elementid.className.split(' ')[1] + "value";
+        console.log(classname);
+        document.querySelector('.' + classname).value = document.getElementById(elementid.id).value;
+    }
+
+    function radiolisttextchange(elementid) {
+        debugger;
+        var classname = elementid.className.split(' ')[1]+"text";
+        console.log(classname);
+        document.querySelector('.' + classname).innerHTML = document.getElementById(elementid.id).value;
+    }
+
+    function addradiolist(elementid) {
+
+        var classname = elementid.className.split(' ')[1];
+        var optionelement = document.getElementById(classname);
+        optionelement.insertAdjacentHTML('beforeend', "<div class='form-group col-md-12'><label class='label-control'>Display value</label><input type=text  class='form-control " + elementid.className.split(' ')[1] + "opt" + optioncounter + "' id='radiolisttextid" + elementid.className.split(' ')[1] + "opt" + optioncounter + "' value='Add Text' onkeyup='radiolisttextchange(this)'/>" +
+            "</div><div class='form-group col-md-6 hidden'><label class='label-control'>Data value</label><input type=text  class='form-control " + elementid.className.split(' ')[1] + "opt" + optioncounter + "' id='radiolistvalueid" + elementid.className.split(' ')[1] + "opt" + optioncounter + "' value='" + optioncounter + "' onkeyup='radiolistvaluechange(this)' readonly='true' />" +
+           "</div>");
+        var formelement = document.getElementById(classname.slice(13) + "radiolist");
+        //   console.log(classname.slice(13) + "optlist");
+        formelement.insertAdjacentHTML('beforeend', "<br/><input type='radio' class='radeo " + elementid.className.split(' ')[1] + "opt" + optioncounter + "' value='" + optioncounter + "' /><span class='radeo " + elementid.className.split(' ')[1] + "opt" + optioncounter + "text'>Add Text</span>");
+        ++optioncounter;
+    }
+
+    //8 numbers
+    function btn_InputNumbers() {
+        var element = document.getElementById("divDroppable");
+        var elementid = "div_" + counter;
+        element.insertAdjacentHTML('beforeend',"<div class='droppablefield' id=" + elementid +
+            "><div class='row'>" +
+            "<label class='control-label'>Number</label><span class='CDRFchecked'></span>" +
+            "<div style='float:right;'><button onclick='dealformfieldedit(this)' class='" + elementid + "' ><i class='fa fa-file'></i></button>" +
+            "<button onclick='dealformfielddelete(this)' class='" + elementid + "'><i class='fa fa-trash'></i></button></div></div>" +
+            "<div class='row'><input class='form-control' type='number' /></div>" +
+            "<span>Description</span>" +
+            "</div>");
+
+
+        var formelement = document.getElementById("divformDroppable");
+        var formelementid = "formdiv_" + counter;
+        formelement.insertAdjacentHTML('beforeend', "<div class='droppableformfield formelementhidden' id=" + formelementid +
+            "><div class='form-group'>" +
+            "<label class='control-label labelname'>Label Name</label>" +
+            "<input type='text' class='form-control " + formelementid + "' onkeyup='labelchange(this)' id='labelid" + counter + "' value='Number' /></div>" +
+            "<div class='form-group'>" +
+            "<label class='control-label labelname'>Description</label>" +
+            "<input type='text' class='form-control " + formelementid + "' onkeyup='descriptionchange(this)' id='descriptionid" + counter + "' value='Description' /></div>" +
+            "<div class='form-group'><label class='control-label'>Placeholder</label><br>" +
+            "<input class='form-control " + formelementid + "' type='number' id='placceholderid" + counter + "' onkeyup='placeholderchange(this)'/></div>" +
+            "<div class='form-group'><label class='control-label'>Is Required</label><br>" +
+            "<input class='check " + formelementid + "' type='checkbox' id='checkid" + counter + "' onchange='checkrequired(this)'/></div>" +
+            "<input type='button' class='btn " + formelementid + " btn-primary' name='saveall' value='Save Changes' onClick='saveInputfields(this)' /></div>");
+        ++counter;
+    }
+    //9 email
+    function btn_InputEmail() {
+            var element = document.getElementById("divDroppable");
+        var elementid = "div_" + counter;
+        element.insertAdjacentHTML('beforeend',"<div class='droppablefield' id=" + elementid +
+            "><div class='row'>" +
+            "<label class='control-label'>Email</label><span class='CDRFchecked'></span>" +
+            "<div style='float:right;'><button onclick='dealformfieldedit(this)' class='" + elementid + "' ><i class='fa fa-file'></i></button>" +
+            "<button onclick='dealformfielddelete(this)' class='" + elementid + "'><i class='fa fa-trash'></i></button></div></div>" +
+            "<div class='row'><input class='form-control' type='email' /></div>" +
+            "<span>Description</span>" +
+            "</div>");
+
+
+        var formelement = document.getElementById("divformDroppable");
+        var formelementid = "formdiv_" + counter;
+        formelement.insertAdjacentHTML('beforeend',"<div class='droppableformfield formelementhidden' id=" + formelementid +
+            "><div class='form-group'>" +
+            "<label class='control-label labelname'>Label Name</label>" +
+            "<input type='text' class='form-control " + formelementid + "' onkeyup='labelchange(this)' id='labelid" + counter + "' value='Email' /></div>" +
+            "<div class='form-group'>" +
+            "<label class='control-label labelname'>Description</label>" +
+            "<input type='text' class='form-control " + formelementid + "' onkeyup='descriptionchange(this)' id='descriptionid" + counter + "' value='Description' /></div>" +
+            "<div class='form-group'><label class='control-label'>Placeholder</label><br>" +
+            "<input class='form-control " + formelementid + "' type='email' id='placceholderid" + counter + "' onkeyup='placeholderchange(this)'/></div>" +
+            "<div class='form-group'><label class='control-label'>Is Required</label><br>" +
+            "<input class='check " + formelementid + "' type='checkbox' id='checkid" + counter + "' onchange='checkrequired(this)'/></div>" +
+            "<input type='button' class='btn " + formelementid + " btn-primary' name='saveall' value='Save Changes' onClick='saveInputfields(this)' /></div>");
+        ++counter;
+    }
+
+    //10 currency
+    function btn_InputCurrency() {
+        var element = document.getElementById("divDroppable");
+        var elementid = "div_" + counter;
+        element.insertAdjacentHTML('beforeend',"<div class='droppablefield' id=" + elementid +
+            "><div class='row'>" +
+            "<label class='control-label'>Currency</label><span class='CDRFchecked'></span>" +
+            "<div style='float:right;'><button onclick='dealformfieldedit(this)' class='" + elementid + "' ><i class='fa fa-file'></i></button>" +
+            "<button onclick='dealformfielddelete(this)' class='" + elementid + "'><i class='fa fa-trash'></i></button></div></div>" +
+            "<div class='row'><input type='number' class='form-control' onblur='currencysetup(this)' /></div>" +
+            "<span>Description</span>" +
+            "</div>");
+
+
+        var formelement = document.getElementById("divformDroppable");
+        var formelementid = "formdiv_" + counter;
+        formelement.insertAdjacentHTML('beforeend',"<div class='droppableformfield formelementhidden' id=" + formelementid +
+            "><div class='form-group'>" +
+            "<label class='control-label labelname'>Label Name</label>" +
+            "<input type='text' class='form-control " + formelementid + "' onkeyup='labelchange(this)' id='labelid" + counter + "' value='Currency' /></div>" +
+            "<div class='form-group'>" +
+            "<label class='control-label labelname'>Description</label>" +
+            "<input type='text' class='form-control " + formelementid + "' onkeyup='descriptionchange(this)' id='descriptionid" + counter + "' value='Description' /></div>" +
+            "<div class='form-group'><label class='control-label'>Placeholder</label><br>" +
+            "<input class='form-control " + formelementid + "' type='number' id='placceholderid" + counter + "' onkeyup='placeholderchange(this)'/></div>" +
+            "<div class='form-group'><label class='control-label'>Is Required</label><br>" +
+            "<input class='check " + formelementid + "' type='checkbox' id='checkid" + counter + "' onchange='checkrequired(this)'/></div>" +
+            "<input type='button' class='btn " + formelementid + " btn-primary' name='saveall' value='Save Changes' onClick='saveInputfields(this)' /></div>");
+        ++counter;
+    }
+
+    //11 Telephone
+    function btn_InputTelephone() {
+        var element = document.getElementById("divDroppable");
+        var elementid = "div_" + counter;
+        element.insertAdjacentHTML('beforeend',"<div class='droppablefield' id=" + elementid +
+            "><div class='row'>" +
+            "<label class='control-label'>Telephone</label><span class='CDRFchecked'></span>" +
+            "<div style='float:right;'><button onclick='dealformfieldedit(this)' class='" + elementid + "' ><i class='fa fa-file'></i></button>" +
+            "<button onclick='dealformfielddelete(this)' class='" + elementid + "'><i class='fa fa-trash'></i></button></div></div>" +
+            "<div class='row'><input type='tel' class='form-control' /></div>" +
+            "<span>Description</span>" +
+            "</div>");
+
+
+        var formelement = document.getElementById("divformDroppable");
+        var formelementid = "formdiv_" + counter;
+        formelement.insertAdjacentHTML('beforeend',"<div class='droppableformfield formelementhidden' id=" + formelementid +
+            "><div class='form-group'>" +
+            "<label class='control-label labelname'>Label Name</label>" +
+            "<input type='text' class='form-control " + formelementid + "' onkeyup='labelchange(this)' id='labelid" + counter + "' value='Telephone' /></div>" +
+            "<div class='form-group'>" +
+            "<label class='control-label labelname'>Description</label>" +
+            "<input type='text' class='form-control " + formelementid + "' onkeyup='descriptionchange(this)' id='descriptionid" + counter + "' value='Description' /></div>" +
+            "<div class='form-group'><label class='control-label'>Placeholder</label><br>" +
+            "<input class='form-control " + formelementid + "' type='tel' id='placceholderid" + counter + "' onkeyup='placeholderchange(this)'/></div>" +
+            "<div class='form-group'><label class='control-label'>Is Required</label><br>" +
+            "<input class='check " + formelementid + "' type='checkbox' id='checkid" + counter + "' onchange='checkrequired(this)'/></div>" +
+            "<input type='button' class='btn " + formelementid + " btn-primary' name='saveall' value='Save Changes' onClick='saveInputfields(this)' /></div>");
+        ++counter;
+    }
+
+
+    function dealformfielddelete(elementid) {
+        var formelement = document.getElementById(elementid.className);
+        debugger;
+        var formfieldelement = document.getElementById("form" + elementid.className);
+        formelement.remove();
+        formfieldelement.remove();
+    }
+
+    function dealformfieldedit(elementid) {
+        var element = document.getElementsByClassName('droppableformfield');
+        debugger;
+        for (var i = 0; i < element.length; i++) {
+            element[i].classList.add('formelementhidden');
+        }
+        var element = document.getElementById("form" + elementid.className);
+        element.classList.remove("formelementhidden");
+    }
+
+    function labelchange(elementid) {
+        var classname = elementid.className.split(' ')[1].slice(4);
+        var x = document.getElementById(classname);
+        x.querySelector(".control-label").innerHTML = document.getElementById(elementid.id).value;
+    }
+
+    function descriptionchange(elementid) {
+        var classname = elementid.className.split(' ')[1].slice(4);
+        var x = document.getElementById(classname);
+        console.log(x);
+        x.querySelector("#"+classname + "> span").innerHTML = document.getElementById(elementid.id).value;
+    }
+
+    function placeholderchange(elementid) {
+        var classname = elementid.className.split(' ')[1].slice(4);
+        var x = document.getElementById(classname);
+        x.querySelector("input[type='text'],input[type='number'],input[type='tel'],input[type='email']").value = document.getElementById(elementid.id).value;
+    }
+
+    function checkrequired(elementid) {
+        var classname = elementid.className.split(' ')[1].slice(4);
+        var x = document.getElementById(classname);
+        if (document.getElementById(elementid.id).checked === true)
+            x.querySelectorAll("span")[0].innerHTML = " *";
+        else
+            x.querySelectorAll("span")[0].innerHTML = "";
+    }
+
+    //Javascript Page load
+    // document.addEventListener("DOMContentLoaded", function () {
+    //
+    // });
+
+    function currencysetup(moneyvalue) {
+        moneyvalue.value = parseFloat(moneyvalue.value).toFixed(2);
+    };
+
+    function saveInputfields(elementid) {
+        var xhttp = new XMLHttpRequest();
+        //xhttp.onreadystatechange = function () {
+        //    if (this.readyState == 4 && this.status == 200) {
+        //        alert(this.responseText);
+        //    }
+        //};
+        debugger;
+        var fieldtype = 0;
+        var counter = elementid.className.split(' ')[1].slice(8);
+        var classname = elementid.className.split(' ')[1].slice(4);
+        var x = document.querySelector('#' + classname + ' input');
+        if (x !== null) {
+            x = x.type;
+        }
+        else {
+            x = document.querySelector('#' + classname + ' select');
+            if (x !== null) {
+                savedropdownlist(x, counter);
+                x = "dropdown";
+            }
+        }
+
+        switch (x) {
+            case "tel":
+                fieldtype = 18;
+                break;
+            case "text":
+                fieldtype = 19;
+                break;
+            case "date":
+                fieldtype = 5;
+                break;
+            case "email":
+                fieldtype = 7;
+                break;
+            case "number":
+                fieldtype = 11;
+                break;
+            case "radio":
+                fieldtype = 13;
+                saveradiolist(classname,counter);
+                break;
+            case "checkbox":
+                fieldtype = 2;
+                savechecklist(classname,counter);
+                break;
+            case "dropdown":
+                fieldtype = 24;
+                break;
+            default:
+                fieldtype = 0;
+                break;
+        }
+        var required = document.getElementById("checkid" + counter).checked;
+        var placeholder = document.querySelectorAll("#" + classname + "input").value;
+        var fielddescription = document.querySelector("#" + classname + "> span").innerHTML;
+            //document.querySelectorAll("#" + classname + " span")[1].innerHTML;
+
+        console.log("FieldName: "+"sequence"+counter);
+        console.log("FieldLabel: "+document.getElementById('labelid' + counter).value);
+        console.log("FieldType: " +fieldtype);
+        console.log("ReferenceDataList_Id: "+null);
+        console.log("IsRequired: " + required);
+        console.log("Placeholder: " + placeholder);
+        console.log("FieldDescription " + fielddescription);
+
+       var obj = {
+            VendorId: vendorId,
+            ProgramId: programId,
+            FieldName: "sequence"+counter,
+            FieldLabel: document.getElementById('labelid' + counter).value,
+            FieldTypeId: fieldtype,
+            Sequence: counter,
+            IsRequired: required,
+            Placeholder: placeholder,
+            FieldDescription: fielddescription
+        };
+        if (fieldtype == "2" || fieldtype == "13" || fieldtype == "24") {
+            debugger;
+            obj.ReferenceDataListId= counter;
+        }
+        else {
+            obj.ReferenceDataListId= null;
+        }
+        xhttp.open("POST", "/Main/SaveVendorFormField", true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("VendorId=" + obj.VendorId + "&ProgramId=" + obj.ProgramId + "&FieldName=" + obj.FieldName + "&FieldLabel=" + obj.FieldLabel + "&FieldTypeId=" + obj.FieldTypeId + "&ReferenceDataListId=" + obj.ReferenceDataListId + "&IsRequired=" + obj.IsRequired + "&FieldDescription=" + obj.FieldDescription + "&Placeholder=" + obj.Placeholder + "&Sequence=" + obj.Sequence);
+    }
+
+
+    function savechecklist(classname, counter) {
+        debugger;
+        var checkinputs = document.getElementById(classname + "checklist").querySelectorAll("input");
+        var spaninputs = document.getElementById(classname + "checklist").querySelectorAll("span");
+        var xhttp = new XMLHttpRequest();
+        var listOfObjects = [];
+        debugger;
+        for (i = 0; i < checkinputs.length; i++) {
+            var obj = {
+                ProgramId: programId,
+                ReferenceDataListId: counter,
+                DataValue: checkinputs[i].value,
+                DisplayValue: spaninputs[i].innerHTML,
+                Sequence: optioncounter,
+                IsActive: true,
+                IsDeleted: false
+            };
+            listOfObjects.push(obj);
+
+        }
+        xhttp.open("POST", "/Main/SaveReferernceDataList", true);
+        xhttp.setRequestHeader("Content-type", "application/json; charset=utf-8");
+        var myArr = JSON.stringify(listOfObjects);
+        xhttp.send(myArr);
+    }
+
+     function saveradiolist(classname, counter) {
+        debugger;
+        var radioinputs = document.getElementById(classname + "radiolist").querySelectorAll("input");
+        var spaninputs = document.getElementById(classname + "radiolist").querySelectorAll("span");
+        var listOfObjects = [];
+        var xhttp = new XMLHttpRequest();
+        for (i = 0; i < radioinputs.length; i++) {
+            var obj = {
+                ProgramId: ViewBag.programId,
+                ReferenceDataListId: counter,
+                DataValue: radioinputs[i].value,
+                DisplayValue: spaninputs[i].innerHTML,
+                Sequence: optioncounter,
+                IsActive: true,
+                IsDeleted: false
+            };
+            listOfObjects.push(obj);
+
+        }
+        xhttp.open("POST", "/Main/SaveReferernceDataList", true);
+        xhttp.setRequestHeader("Content-type", "application/json; charset=utf-8");
+        var myArr = JSON.stringify(listOfObjects);
+        xhttp.send(myArr);
+    }
+    
+
+    function savedropdownlist(optionlist,counter) {
+        debugger;
+        var listOfObjects = [];
+        var xhttp = new XMLHttpRequest();
+        //xhttp.onreadystatechange = function () {
+        //    if (xhttp.readyState == XMLHttpRequest.DONE) {
+        //        alert(xhttp.responseText);
+        //    }
+        //}
+        for (i = 0; i < optionlist.length; i++) {
+            var obj = {
+                ProgramId: ViewBag.programId,
+                ReferenceDataListId: counter,
+                DataValue: optionlist.options[i].value,
+                DisplayValue: optionlist.options[i].text,
+                Sequence: optioncounter,
+                IsActive: true,
+                IsDeleted: false
+            };
+            listOfObjects.push(obj);
+   
+         }
+        xhttp.open("POST", "/Main/SaveReferernceDataList", true);
+        xhttp.setRequestHeader("Content-type", "application/json; charset=utf-8");
+        var myArr = JSON.stringify(listOfObjects);
+        xhttp.send(myArr);
+    }
+
+    function saveAllInputfields() {
+        //removed old form
+        @*var xhttp = new XMLHttpRequest();
+        var obj = {
+            Vendor_Id:@ViewBag.VendorId
+                 };
+        xhttp.open("POST", "/vendor/removeVendorForm", true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("Vendor_Id="+obj.Vendor_Id );*@
+        // Get all buttons with the name 'all' and store in a NodeList called 'buttons'
+        var buttons = document.getElementsByName('saveall');
+
+        // Loop through NodeList and call the click() function on each button
+        for (var i = 0; i < buttons.length; i++) { buttons[i].click(); }
+
+        alert("Form Saved Successfully")
+        window.history.back();
+      }
+
+    //public int Vendor_Id { get; set; }
+    //public string FieldName { get; set; }
+    //public string FieldLabel { get; set; }
+    //public int FieldType { get; set; }
+    //public int ReferenceDataList_Id { get; set; }
+    //public bool IsRequired { get; set; }
+
+</script>

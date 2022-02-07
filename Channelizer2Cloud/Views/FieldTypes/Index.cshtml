@@ -1,0 +1,95 @@
+﻿@model PagedList.IPagedList<Channelizer2Cloud.Models.FieldType>
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "Field Type Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br />
+<div class="row">
+    <div class="col-md-8">   
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+
+            @using (Html.BeginForm(null, null, FormMethod.Post, new { @class = "form-inline" }))
+            {
+                @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @class = "form-control" })
+                <input type="submit" value="Search" class="btn btn-primary glyphicon-search" />
+                @Html.ActionLink("Create New", "Create")
+            }
+        </div>
+    </div>
+    </div>
+<br />
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.ActionLink("FieldTypeName", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>
+           Is Active
+        </th>
+        <th>
+           Created On
+        </th>
+        <th>
+           Created By
+        </th>
+        <th>
+            Is Deleted
+        </th>
+        <th>
+            Modified On
+        </th>
+        <th>
+            Modified By
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FieldTypeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsActive)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedOn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsDeleted)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastModifiedOn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModifiedBy)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.FieldType_Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.FieldType_Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.FieldType_Id })
+            </td>
+        </tr>
+    }
+
+</table>
+<div class="row">
+    <div class="col-md-10">
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+    </div>
+    <div class="col-md-2">
+        <p style="text-align: center; padding: 2em;">Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount</p>
+    </div>
+</div>
+     
+
+      

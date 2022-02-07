@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8">
+    <link rel="icon" href="~/Content/img/Channelizer.ico" type="image/x-icon" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/maincss")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="container-fluid s-container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="row">
+                    <div  class="col-md-3">
+                        <img class="img-fluid" src="~/Content/img/logo.png" alt="Channelizer2Cloud" height="100">
+                    </div>
+
+                    <div class="col-md-9" style="padding:45px 0 0 125px">
+                        <h3>
+                        <a href="/Main/home" style="color:#000000;"><i class="glyphicon glyphicon-home">Home</i></a>&nbsp;&nbsp;
+                        <a href="/Main/CreateNewReg" style="color:#000000;"><i class="glyphicon glyphicon-plus">AddReg</i></a>
+                            </h3>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-offset-8">
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+        @RenderBody()
+        <div class="row">
+            <div class=" col-md-12 s-center applayout-bottom-footer">
+                Copyright &copy; @DateTime.Now.Year Channelizer2Cloud Inc. All Rights Reserved.
+            </div>
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/javascript")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

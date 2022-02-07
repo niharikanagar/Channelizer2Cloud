@@ -1,0 +1,102 @@
+﻿@model PagedList.IPagedList<Channelizer2Cloud.Models.Mvs_Deal>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "DeletedRegistrations";
+    Layout = "~/Views/Shared/_AppLayout.cshtml";
+}
+
+<br />
+<div class="row">
+    <div class="col-md-8">
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+
+            @using (Html.BeginForm(null, null, FormMethod.Post, new { @class = "form-inline" }))
+            {
+                @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @class = "form-control" })
+                <input type="submit" value="Search" class="btn btn-primary glyphicon-search" />
+                @Html.ActionLink("Create New", "CreateNewReg")
+            }
+        </div>
+    </div>
+</div>
+<br />
+
+<table class="table">
+    <tr>
+        <th>
+            Program Name
+        </th>
+        <th>
+            @Html.ActionLink("Deal Name", "DeletedRegistrations", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>
+            @Html.ActionLink("Deal Description", "DeletedRegistrations", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>
+            @Html.ActionLink("Created On", "DeletedRegistrations", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>
+            @Html.ActionLink("Deal Status", "DeletedRegistrations", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>
+            SaleRep Name
+        </th>
+        <th>
+            Submitted On
+        </th>
+        <th>
+            Created By
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.vendor_Program.ProgramName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DealName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DealDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedOn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DealStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.mvsSalesRepresentative.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SubmittedOn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedBy)
+            </td>
+            <td>
+                @*@Html.ActionLink("Edit", "Edit", new
+                {id = item.FieldType_Id}) |
+                @Html.ActionLink("Details", "Details", new
+                {id = item.FieldType_Id}) |
+                @Html.ActionLink("Delete", "Delete", new
+                {id = item.FieldType_Id})*@
+            </td>
+        </tr>
+    }
+
+</table>
+
+<div class="row">
+    <div class="col-md-10">
+        @Html.PagedListPager(Model, page => Url.Action("DeletedRegistrations", new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+    </div>
+    <div class="col-md-2">
+        <p style="text-align: center; padding: 2em;">Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount</p>
+    </div>
+</div>

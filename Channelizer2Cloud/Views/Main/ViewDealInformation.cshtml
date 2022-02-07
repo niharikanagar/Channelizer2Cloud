@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "View Deal";
+    Layout = "~/Views/Shared/_AppLayout.cshtml";
+}
+
+<h2>View Deals</h2>
+
+<br />
+<img src="~/Content/img/vendor/@ViewBag.VendorLogo" width="80" height="80" />
+
+@foreach (var item in (IEnumerable<Channelizer2Cloud.ViewModel.DealFormViewModel>)ViewBag.DealFormField)
+{
+    <div class="form-group">
+
+        <label class="control-label">@item.FieldLabel</label>
+        <br />
+        <span>@item.DataValue</span>
+    </div>
+
+
+}

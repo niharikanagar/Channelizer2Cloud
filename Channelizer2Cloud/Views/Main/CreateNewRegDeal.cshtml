@@ -1,0 +1,151 @@
+﻿@model IEnumerable<Channelizer2Cloud.Models.Vendor_RegistrationFormField>
+@{
+    ViewBag.Title = "Deal Registration";
+    Layout = "~/Views/Shared/_AppLayout.cshtml";
+}
+<h2>Deal Registration</h2>
+
+
+<!--Vendor Logo Title-->
+@using (Html.BeginForm("SaveDealRegistrationForm", "Main", new { dealId = ViewBag.DealID }, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <img src="~/Content/img/vendor/@ViewBag.VendorLogo" width="80" height="80" />
+
+    foreach (var item in Model)
+    {
+        if (item.FieldTypeId == 7)
+        {
+            <div class="form-group">
+                <label class="control-label">@Html.DisplayFor(modelItem => item.FieldLabel)</label>
+                @if (item.IsRequired ?? false)
+                {
+                    <span class='CDRFchecked'> *</span>
+                }
+                <input class="form-control" type="email" name=@Html.DisplayFor(modelItem => item.FieldName) />
+                <span>@Html.DisplayFor(modelItem => item.FieldDescription)</span>
+            </div>
+
+        }
+        if (item.FieldTypeId == 5)
+        {
+            <div class="form-group">
+                <label class="control-label">@Html.DisplayFor(modelItem => item.FieldLabel)</label>
+                @if (item.IsRequired ?? false)
+                {
+                    <span class='CDRFchecked'> *</span>
+                }
+                <input class="form-control" type="date" name=@Html.DisplayFor(modelItem => item.FieldName) />
+                <span>@Html.DisplayFor(modelItem => item.FieldDescription)</span>
+            </div>
+        }
+        if (item.FieldTypeId == 11)
+        {
+            <div class="form-group">
+                <label class="control-label">@Html.DisplayFor(modelItem => item.FieldLabel)</label>
+                @if (item.IsRequired ?? false)
+                {
+                    <span class='CDRFchecked'> *</span>
+                }
+                <input class="form-control" type="number" name=@Html.DisplayFor(modelItem => item.FieldName) />
+                <span>@Html.DisplayFor(modelItem => item.FieldDescription)</span>
+            </div>
+        }
+        if (item.FieldTypeId == 18)
+        {
+            <div class="form-group">
+                <label class="control-label">@Html.DisplayFor(modelItem => item.FieldLabel)</label>
+                @if (item.IsRequired ?? false)
+                {
+                    <span class='CDRFchecked'> *</span>
+                }
+                <input class="form-control" type="tel" name=@Html.DisplayFor(modelItem => item.FieldName) />
+                <span>@Html.DisplayFor(modelItem => item.FieldDescription)</span>
+            </div>
+        }
+        if (item.FieldTypeId == 19)
+        {
+            <div class="form-group">
+                <label class="control-label">@Html.DisplayFor(modelItem => item.FieldLabel)</label>
+                @if (item.IsRequired ?? false)
+                {
+                    <span class='CDRFchecked'> *</span>
+                }
+
+                <input class="form-control" type="text" name=@Html.DisplayFor(modelItem => item.FieldName) />
+                <span>@Html.DisplayFor(modelItem => item.FieldDescription)</span>
+            </div>
+        }
+
+        if (item.FieldTypeId == 24)
+        {
+            string fieldid = (item.FieldName).Remove(0, 8);
+
+            <div class="form-group">
+                <label class="control-label">@Html.DisplayFor(modelItem => item.FieldLabel)</label>
+                @if (item.IsRequired ?? false)
+                {
+                    <span class='CDRFchecked'> *</span>
+                }
+                <br />
+                @Html.DropDownList(item.FieldName, (IEnumerable<SelectListItem>)ViewData[fieldid], new { @class = "form-control" })
+
+                <span>@Html.DisplayFor(modelItem => item.FieldDescription)</span>
+            </div>
+        }
+        if (item.FieldTypeId == 2)
+        {
+            string fieldid = (item.FieldName).Remove(0, 8);
+            <div class="form-group">
+                <label class="control-label">@Html.DisplayFor(modelItem => item.FieldLabel)</label>
+                @if (item.IsRequired ?? false)
+                {
+                    <span class='CDRFchecked'> *</span>
+                }
+                <br />
+
+
+                @foreach (var lists in (IEnumerable<SelectListItem>)ViewData[fieldid])
+                {
+                    <input type="checkbox" name=@Html.DisplayFor(modelItem => item.FieldName) value=@lists.Value />
+
+                    <label>@lists.Text</label><br />
+
+                }
+                <span>@Html.DisplayFor(modelItem => item.FieldDescription)</span>
+            </div>
+        }
+
+        if (item.FieldTypeId == 13)
+        {
+            string fieldid = (item.FieldName).Remove(0, 8);
+            <div class="form-group">
+                <label class="control-label">@Html.DisplayFor(modelItem => item.FieldLabel)</label>
+                @if (item.IsRequired ?? false)
+                {
+                    <span class='CDRFchecked'> *</span>
+                }
+                <br />
+
+                @foreach (var lists in (IEnumerable<SelectListItem>)ViewData[fieldid])
+                {
+                    <input type="radio" name=@Html.DisplayFor(modelItem => item.FieldName) value=@lists.Value />
+
+                    <label>@lists.Text</label><br />
+
+                }
+
+                <span>@Html.DisplayFor(modelItem => item.FieldDescription)</span>
+            </div>
+        }
+    }
+            <div class="looksubmitbuttonsection">
+                <input type='submit' class='btn btn-primary' value='Submit' />
+                @*<input type='submit' class='btn btn-info' value='Save as Draft' />*@
+                @*<input type='reset' class='btn btn-default' value='Reset' />*@
+                @*<input type='button' class='btn btn-link' value='Cancel' />*@
+                <input type="button" value="Cancel" onclick="@("window.location.href='" + @Url.Action("ViewRegistrations", "Main") + "'");" />
+            </div>
+}
+
+
+

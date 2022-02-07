@@ -1,0 +1,94 @@
+﻿@model IEnumerable<Channelizer2Cloud.Models.UserLoginDeviceInfo>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ip)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.city)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.region)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.country)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.loc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.org)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.postal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.timezone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.user_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.onetimepassword)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.login_time)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ip)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.city)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.region)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.country)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.loc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.org)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.postal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.timezone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.user_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.onetimepassword)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.login_time)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.UserLoginDeviceInfo_Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.UserLoginDeviceInfo_Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.UserLoginDeviceInfo_Id })
+        </td>
+    </tr>
+}
+
+</table>

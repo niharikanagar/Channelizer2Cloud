@@ -1,0 +1,123 @@
+﻿@model Channelizer2Cloud.Models.Vendor
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Vendor</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.VendorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VendorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VendorLogo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VendorLogo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VendorPrimaryColor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VendorPrimaryColor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VendorSecondaryColor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VendorSecondaryColor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VendorFont)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VendorFont)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TwitterLink)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TwitterLink)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LinkedinLink)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LinkedinLink)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsActive)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedOn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedOn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsDeleted)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsDeleted)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastModifiedOn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastModifiedOn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedBy)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Vendor_Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

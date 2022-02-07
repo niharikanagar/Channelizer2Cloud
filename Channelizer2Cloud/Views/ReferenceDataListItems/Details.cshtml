@@ -1,0 +1,107 @@
+﻿@model Channelizer2Cloud.Models.ReferenceDataListItem
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AppLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ReferenceDataListItem</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ReferenceDataListId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReferenceDataListId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProgramId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProgramId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DisplayValue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DisplayValue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataValue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataValue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sequence)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sequence)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsActive)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedOn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedOn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsDeleted)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsDeleted)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastModifiedOn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastModifiedOn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedBy)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ReferenceDataListItem_Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
